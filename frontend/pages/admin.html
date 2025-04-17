@@ -1,1 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin - Books of Femi</title>
+  <link rel="stylesheet" href="../css/admin.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar superior con fondo de imagen -->
+  <header class="navbar">
+    <div class="nav-buttons">
+      <button class="btn">User</button>
+      <button class="btn">Home</button>
+    </div>
+    <h1 class="logo">BOOKS OF FEMI</h1>
+  </header>
 
+  <!-- Contenedor de la página -->
+  <div class="container">
+    <!-- Menú lateral izquierdo -->
+    <nav class="sidebar">
+      <div class="dropdown">
+        <button class="dropbtn">Report</button>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Catalog</button>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Ventas</button>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" data-section="users">Users</button>
+      </div>      
+      <div class="dropdown">
+        <button class="dropbtn">Contact us</button>
+      </div>
+    </nav>
+
+    <!-- Zona principal de contenido -->
+    <main class="main-content">
+      <div class="user-table">
+        <div class="user-table-header">
+          <span>Username</span>
+          <span>Email</span>
+          <span>Action</span>
+        </div>
+
+        <div class="user-table-row">
+          <span>Usuario</span>
+          <span>Gmail.com</span>
+          <button class="view-btn">View Purchases</button>
+        </div>
+
+        <div class="user-table-row">
+          <span>Usuario</span>
+          <span>Gmail.com</span>
+          <button class="view-btn">View Purchases</button>
+        </div>
+
+        <div class="user-table-row">
+          <span>Usuario</span>
+          <span>Gmail.com</span>
+          <button class="view-btn">View Purchases</button>
+        </div>
+
+        <div class="search-icon">
+          🔍
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Script para lógica de interacciones -->
+  <script src="../js/admin.js"></script>
+</body>
+</html>
