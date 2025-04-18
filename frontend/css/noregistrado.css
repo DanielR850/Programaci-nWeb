@@ -9,9 +9,11 @@
     font-family: 'Open Sans', sans-serif;
   }
    
+
+   /*---Log in-----*/
+ 
   
-/* --- CONTACTANOS --- */
-.navbar {
+   body {
     background-image: url('../assets/2019-01-15-10-41-32.jpg');
     background-size: cover;
     background-position: center;
@@ -19,69 +21,116 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
- ; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .login-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+  }
+  
+  .login-form {
+    color: black;
+    display: flex;
+    flex-direction: column;
+  }
+  
+ 
+  .role-select,
+  .login-form input {
+    background-color:  rgb(216, 216, 216); 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #a7a7a7;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+  .sign-in-btn {
+    padding: 10px;
+   background-color:  rgb(216, 216, 216); 
+    color: rgb(0, 0, 0);
+    border: 1px black;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .sign-in-btn:hover {
+    background: #0056b3;
+  }
+  
+  .login-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  
+  .back-link {
+    color: #333;
+    text-decoration: none;
+    display: inline-block; /* Necesario para que margin-top funcione correctamente */
+  margin-top: 12px; /* Puedes ajustar este valor */
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  
+ 
+  .create-btn {
+    padding: 10px 40px;
+
+    background-color:  rgb(109, 109, 109); 
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px black;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .create-btn:hover {
+    text-decoration: underline;
+  }
+  
+  .info-content {
+    align-items: center;    
+    justify-content: center; 
+    text-align: center;
+    display: flex; 
+    background-color:rgb(216, 216, 216); 
+    height: 407px;
+    border-radius: 6px;
+    padding: 30px;
+    max-width: 90%;
   }
 
-  h1.logocontactus {
-    margin-left: 50px; /* Puedes ajustar el valor según lo que necesites */
+  h1.logologin  {
     font-family: 'Oleo Script', cursive;
-    font-size: 48px;
+    font-size: 50px;
     color: white;
   }
   
   
-  .nav-buttons .btn {
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-weight: bold;
-    text-align: center;
-    min-width: 150px;
-  }
-  
-  .nav-buttons .btn:hover {
-    background-color: #777777;
-  }
-  
-     /*informacion*/
-  
-     .intro-container {
-        display: flex;
-        justify-content: left;
-        padding-top: 120px; /* lo baja un poco */
-        padding-right: 100px; /* margen derecho general */
-      }
-      
-      .intro {
-        max-width: 700px;
-        text-align: left;
-      }
-      
-      h4.intro-title {
-        margin-left: 80px; 
-        font-size: 24px;
-        margin-bottom: 20px;
-        color: #333;
-      }
-      
-      .intro-text {
-        margin-left: 80px; 
-        font-size: 16px;
-        color: #555;
-        line-height: 1.6;
-      }
-
-      
-    
-    .location-icon {
-        margin-right: 8px;  /* Espacio entre el icono y el texto */
-    }
-    
-    
 
   /* --- Catálogo --- */
 .catalogo-container {
@@ -249,11 +298,10 @@
  
   .create-btn {
     padding: 10px 40px;
-    
+
     background-color:  rgb(109, 109, 109); 
     border-radius: 8px;
     font-size: 16px;
-  
     border: 1px black;
     color: #000000;
     cursor: pointer;

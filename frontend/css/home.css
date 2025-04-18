@@ -29,6 +29,7 @@
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
+    text-decoration: none;
     cursor: pointer;
     font-weight: bold;
     text-align: center;
@@ -53,6 +54,7 @@
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
+    text-decoration: none;
     cursor: pointer;
     font-weight: bold;
     text-align: center;

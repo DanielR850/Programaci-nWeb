@@ -21,21 +21,26 @@
   
   
   .nav-buttons .btn {
-    background-color: rgb(29, 29, 29);
+    background-color: rgb(41, 41, 41);
     color: #ffffff;
     width: 100%;
     padding: 10px;
-    border: none;
+    border: 1px solid black;
     border-radius: 10px;
+    text-decoration: none; /* Evita el subrayado */
     cursor: pointer;
     font-weight: bold;
     text-align: center;
     min-width: 150px;
+    display: inline-block; /* Asegura que el enlace se comporte como un bloque pero no ocupe todo el ancho */
+    margin-left: -30px; /* Mueve el botón 10px a la izquierda */
   }
   
   .nav-buttons .btn:hover {
-    background-color: #383838;
+    background-color: #777777; /* Cambio de color al pasar el mouse */
+    border-color: #666666; /* Cambio en el borde al pasar el mouse */
   }
+  
   
      /*informacion*/
   
