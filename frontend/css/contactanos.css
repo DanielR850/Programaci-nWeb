@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&family=Open+Sans&display=swap');
+
+/* --- CONTACTANOS --- */
+.navbar {
+    background-image: url('../assets/2019-01-15-10-41-32.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 1px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ ; 
+  }
+
+  h1.logocontactus {
+    margin-left: 50px; /* Puedes ajustar el valor según lo que necesites */
+    font-family: 'Oleo Script', cursive;
+    font-size: 48px;
+    color: white;
+  }
+  
+  
+  .nav-buttons .btn {
+    background-color: rgb(29, 29, 29);
+    color: #ffffff;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    min-width: 150px;
+  }
+  
+  .nav-buttons .btn:hover {
+    background-color: #383838;
+  }
+  
+     /*informacion*/
+  
+     .intro-container {
+        display: flex;
+        justify-content: left;
+        padding-top: 120px; /* lo baja un poco */
+        padding-right: 100px; /* margen derecho general */
+      }
+      
+      .intro {
+        max-width: 700px;
+        text-align: left;
+      }
+      
+      h4.intro-title {
+        font-family: 'Arial', sans-serif;  /* Cambia a la fuente que desees */
+        margin-top: -30px;  /* Empuja hacia arriba */
+        margin-left: 80px; 
+        font-size: 24px;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      
+      .intro-text {
+        font-family: 'Arial', sans-serif;  /* Cambia a la fuente que desees */
+        margin-left: 80px; 
+        font-size: 16px;
+        color: #000000;
+        line-height: 1.6;
+      }
+
+      
+
+    .location-icon {
+        margin-right: 8px;  /* Espacio entre el icono y el texto */
+    }
