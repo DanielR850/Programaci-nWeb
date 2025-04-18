@@ -122,7 +122,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-  ; 
+ ; 
   }
 
   h1.logocontactus {
@@ -184,11 +184,7 @@
         margin-right: 8px;  /* Espacio entre el icono y el texto */
     }
     
-      
-      
-
-
-
+    
 
   /* --- Catálogo --- */
 .catalogo-container {
@@ -269,12 +265,19 @@
   
 
   /*Log in*/
-
+ 
+  
   body {
+    background-image: url('../assets/2019-01-15-10-41-32.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
-    background: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -282,6 +285,7 @@
   }
   
   .login-container {
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -297,29 +301,27 @@
   }
   
   .login-form {
+    color: black;
     display: flex;
     flex-direction: column;
   }
   
-  .login-form h2 {
-    margin-bottom: 10px;
-    font-size: 18px;
-  }
-  
+ 
   .role-select,
   .login-form input {
+    background-color:  rgb(216, 216, 216); 
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #a7a7a7;
     border-radius: 8px;
     font-size: 14px;
   }
   
   .sign-in-btn {
     padding: 10px;
-    background: #007BFF;
-    color: white;
-    border: none;
+   background-color:  rgb(216, 216, 216); 
+    color: rgb(0, 0, 0);
+    border: 1px black;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
@@ -339,16 +341,24 @@
   .back-link {
     color: #333;
     text-decoration: none;
+    display: inline-block; /* Necesario para que margin-top funcione correctamente */
+  margin-top: 12px; /* Puedes ajustar este valor */
   }
   
   .back-link:hover {
     text-decoration: underline;
   }
   
+ 
   .create-btn {
-    background: none;
-    border: none;
-    color: #007BFF;
+    padding: 10px 40px;
+    
+    background-color:  rgb(109, 109, 109); 
+    border-radius: 8px;
+    font-size: 16px;
+  
+    border: 1px black;
+    color: #000000;
     cursor: pointer;
     text-decoration: none;
   }
@@ -356,4 +366,24 @@
   .create-btn:hover {
     text-decoration: underline;
   }
+  
+  .info-content {
+    align-items: center;    
+    justify-content: center; 
+    text-align: center;
+    display: flex; 
+    background-color:rgb(216, 216, 216); 
+    height: 407px;
+    border-radius: 6px;
+    padding: 30px;
+    max-width: 90%;
+  }
+
+  h1.logologin  {
+    font-family: 'Oleo Script', cursive;
+    font-size: 50px;
+    color: white;
+  }
+
+ 
   
