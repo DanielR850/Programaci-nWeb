@@ -1,0 +1,125 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&family=Open+Sans&display=swap');
+
+
+body {
+    background-image: url('../assets/2019-01-15-10-41-32.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .login-container {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .login-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
+  }
+  
+  .login-form {
+    color: black;
+    width: 60%; 
+    display: flex;
+    flex-direction: column; 
+    margin: 0 auto; /* Esto centra horizontalmente */
+  }
+  
+ 
+  
+  .login-form input {
+    background-color:  rgb(216, 216, 216); 
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #a7a7a7;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+  
+
+  
+  .sign-in-btn:hover {
+    background: #0056b3;
+  }
+  
+  .login-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    gap: 10px; /* Espacio entre los enlaces, opcional */
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+  
+  .back-link {
+    color: #333;
+    text-decoration: none;
+    display: inline-block; /* Necesario para que margin-top funcione correctamente */
+  margin-top: 15px; /* Puedes ajustar este valor */
+  align-self: flex-start;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  
+ 
+  .create-btn {
+    padding: 10px 40px;
+
+    width: 60%; 
+    background-color:  rgb(109, 109, 109); 
+    border-radius: 8px;
+    font-size: 16px;
+    border: 1px black;
+    color: #000000;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .create-btn:hover {
+    text-decoration: underline;
+  }
+  
+ .info-content {
+  display: flex;
+  flex-direction: column; /* clave para apilar contenido verticalmente */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgb(216, 216, 216);
+  height: 323px;
+  border-radius: 6px;
+  padding: 30px;
+  width: 380px;  /* Fijamos el ancho para evitar que se encoja */
+  max-width: 400%;
+  box-sizing: border-box;
+}
+
+
+  h1.logologin  {
+    font-family: 'Oleo Script', cursive;
+    font-size: 50px;
+    color: white;
+  }
+  
+  
