@@ -13,7 +13,7 @@
   }
 
   h1.logocontactus {
-    margin-left: 50px; /* Puedes ajustar el valor según lo que necesites */
+    margin-left: 50px; 
     font-family: 'Oleo Script', cursive;
     font-size: 48px;
     color: white;
@@ -27,18 +27,18 @@
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
-    text-decoration: none; /* Evita el subrayado */
+    text-decoration: none;
     cursor: pointer;
     font-weight: bold;
     text-align: center;
     min-width: 150px;
-    display: inline-block; /* Asegura que el enlace se comporte como un bloque pero no ocupe todo el ancho */
-    margin-left: -30px; /* Mueve el botón 10px a la izquierda */
+    display: inline-block; 
+    margin-left: -30px; 
   }
   
   .nav-buttons .btn:hover {
-    background-color: #777777; /* Cambio de color al pasar el mouse */
-    border-color: #666666; /* Cambio en el borde al pasar el mouse */
+    background-color: #777777;
+    border-color: #666666;
   }
   
   
@@ -47,8 +47,8 @@
      .intro-container {
         display: flex;
         justify-content: left;
-        padding-top: 120px; /* lo baja un poco */
-        padding-right: 100px; /* margen derecho general */
+        padding-top: 120px; 
+        padding-right: 100px; 
       }
       
       .intro {
@@ -57,8 +57,8 @@
       }
       
       h4.intro-title {
-        font-family: 'Arial', sans-serif;  /* Cambia a la fuente que desees */
-        margin-top: -30px;  /* Empuja hacia arriba */
+        font-family: 'Arial', sans-serif;  
+        margin-top: -30px;  
         margin-left: 80px; 
         font-size: 24px;
         margin-bottom: 20px;
@@ -66,7 +66,7 @@
       }
       
       .intro-text {
-        font-family: 'Arial', sans-serif;  /* Cambia a la fuente que desees */
+        font-family: 'Arial', sans-serif;  
         margin-left: 80px; 
         font-size: 16px;
         color: #000000;
@@ -76,5 +76,5 @@
       
 
     .location-icon {
-        margin-right: 8px;  /* Espacio entre el icono y el texto */
+        margin-right: 8px; 
     }

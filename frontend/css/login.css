@@ -1,8 +1,19 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&family=Open+Sans&display=swap');
 
 
-body {
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+   
+
+   /*---Log in-----*/
+ 
+  
+   body {
     background-image: url('../assets/2019-01-15-10-41-32.jpg');
     background-size: cover;
     background-position: center;
@@ -19,6 +30,7 @@ body {
     height: 100vh;
   }
   
+
   .login-container {
     
     display: flex;
@@ -34,17 +46,16 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 350px;
   }
-  
+
+  /*--Formulario--*/
   .login-form {
     color: black;
-    width: 60%; 
     display: flex;
-    flex-direction: column; 
-    margin: 0 auto;
+    flex-direction: column;
   }
   
- 
-  
+ /*--Selector de rol--*/
+  .role-select,
   .login-form input {
     background-color:  rgb(216, 216, 216); 
     padding: 10px;
@@ -54,41 +65,45 @@ body {
     font-size: 14px;
   }
   
-
+  /*Botón de inicio de sesión--*/
+  .sign-in-btn {
+    padding: 10px;
+   background-color:  rgb(216, 216, 216); 
+    color: rgb(0, 0, 0);
+    border: 1px black;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
   
+
   .sign-in-btn:hover {
     background: #0056b3;
   }
   
-  /*--Contenedor de los botones de acción--*/
   .login-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; 
     display: flex;
     justify-content: space-between;
     font-size: 14px;
   }
   
-  /*--Enlace para regresar a la página principal--*/
+  /*← Back*/
   .back-link {
     color: #333;
     text-decoration: none;
-    display: inline-block; 
-  margin-top: 15px; 
-  align-self: flex-start;
+    display: inline-block;
+  margin-top: 12px; 
   }
   
   .back-link:hover {
     text-decoration: underline;
   }
   
-  /*--Botón/enlace--*/
+ /*--Enlace para crear cuenta--*/
   .create-btn {
     padding: 10px 40px;
 
-    width: 60%; 
     background-color:  rgb(109, 109, 109); 
     border-radius: 8px;
     font-size: 16px;
@@ -102,26 +117,26 @@ body {
     text-decoration: underline;
   }
   
- .info-content {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background-color: rgb(216, 216, 216);
-  height: 323px;
-  border-radius: 6px;
-  padding: 30px;
-  width: 380px; 
-  max-width: 400%;
-  box-sizing: border-box;
-}
+ /*-- Contenido informativo---*/
+  .info-content {
+    align-items: center;    
+    justify-content: center; 
+    text-align: center;
+    display: flex; 
+    background-color:rgb(216, 216, 216); 
+    height: 407px;
+    border-radius: 6px;
+    padding: 30px;
+    max-width: 90%;
+  }
 
-
+  /*--Logo--*/
   h1.logologin  {
     font-family: 'Oleo Script', cursive;
     font-size: 50px;
     color: white;
   }
   
+  
+
   
