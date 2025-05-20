@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <link rel="stylesheet" href="../css/carrito.css" />
+    <title>Cart - BOOKS OF FEMI</title>
+</head>
+
+<body>
+    <div class="header-box">
+        <h1>BOOKS OF FEMI</h1>
+        <div class="nav-buttons">
+            <a href="catalogo-cliente.html" class="btn">Catalog</a>
+            <a href="#" class="btn user-btn">User</a>
+        </div>
+    </div>
+
+    <div class="Subtitle">
+        <h2>Product list</h2>
+    </div>
+
+    <div class="cart-container">
+        <!-- Lista de productos -->
+        <div class="cart-items">
+            <div class="cart-item">
+                <img src="../assets/diariodegreg2.jpg" alt="El diario de Greg 2" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>El diario de Greg 2</h3>
+                    <p>Author: Jeff Kinney</p>
+                    <p class="cart-item-price">$19.99 USD</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+            
+            <div class="cart-item">
+                <img src="../assets/biblia.jpg" alt="Santa Biblia" class="cart-item-image">
+                <div class="cart-item-details">
+                    <h3>Santa Biblia</h3>
+                    <p>Author: Christian Publishing House</p>
+                    <p class="cart-item-price">$12.99 USD</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="quantity-btn">+</button>
+                    </div>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumen de compra -->
+        <div class="checkout-summary">
+            <h3>Order Summary</h3>
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span>$32.98 USD</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (10% VAT):</span>
+                <span>$3.30 USD</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span>$36.28 USD</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+</body>
+
+</html>

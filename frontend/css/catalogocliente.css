@@ -1,0 +1,125 @@
+.header-box {
+    background-image: url('../assets/2019-01-15-10-41-32.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 1px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ;
+}
+
+h1 {
+    margin-left: 50px;
+    font-family: 'Oleo Script', cursive;
+    font-size: 48px;
+    color: white;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 40px;
+}
+
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.icon-btn:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+/* tamaño de la fuente del icono */
+.icon-btn .material-icons {
+  font-size: 24px;
+}
+
+
+.nav-buttons .btn {
+  padding: 10px 60px;
+  background-color: rgb(41,41,41);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+.nav-buttons .btn:hover {
+  background-color: #777;
+  border-color: #666666;
+}
+
+/* (Opcional) Si quieres que “User” destaque más, dale una clase extra */
+.user-btn {
+  background-color: #fff;
+  color: #000;
+}
+.user-btn:hover {
+  background-color: #eee;
+}
+
+.filters-box {
+ display: flex;
+ gap: 100px;
+ align-items: center;
+ margin: 10px 0;
+ padding: 10px 100px;
+ font-family: 'Arial', sans-serif;
+font-size: 20px;
+}
+
+.filter {
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px 100px;
+}
+
+.book-card {
+  width: 200px;             
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 15px;
+}
+
+.book-image {
+  width: 100%;              
+  height: auto;              
+  object-fit: cover;         
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.btn-cart {
+ padding: 10px 20px;
+ background-color: #1dc8f5;
+ font-family: 'Arial', sans-serif;
+ color: white;
+ border-radius: 5px;
+ border-color: black;
+ text-decoration: none;
+}
+
+.book-card .btn-cart:hover {
+    background-color: #47a5bd;
+}
