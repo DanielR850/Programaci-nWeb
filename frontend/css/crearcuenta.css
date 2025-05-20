@@ -18,7 +18,8 @@ body {
     align-items: center;
     height: 100vh;
   }
-  
+
+ 
   .login-container {
     
     display: flex;
@@ -29,7 +30,7 @@ body {
   
   .login-box {
     background: #fff;
-    padding: 40px;
+    padding: 33px;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 350px;
@@ -69,6 +70,7 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
+
   }
   
   /*--Enlace para regresar a la página principal--*/
@@ -86,21 +88,27 @@ body {
   
   /*--Botón/enlace--*/
   .create-btn {
-    padding: 10px 40px;
-
-    width: 60%; 
-    background-color:  rgb(109, 109, 109); 
+    padding: 10px;
+    background-color: rgb(216, 216, 216);
+    color: rgb(0, 0, 0);
+    border: none; /* corregido para que se vea bien */
     border-radius: 8px;
     font-size: 16px;
-    border: 1px black;
-    color: #000000;
     cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%; /* para que tenga el mismo ancho que inputs */
+    box-sizing: border-box;
+    text-align: center; /* por si es enlace */
+    display: inline-block; /* para que respete ancho y padding */
+    text-decoration: none; /* para quitar subrayado si es <a> */
+}
+
+.create-btn:hover {
+    background: #0056b3;
+    color: rgb(0, 0, 0); /* para que el texto contraste al hacer hover */
     text-decoration: none;
-  }
-  
-  .create-btn:hover {
-    text-decoration: underline;
-  }
+}
+
   
  .info-content {
   display: flex;
