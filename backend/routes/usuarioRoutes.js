@@ -7,5 +7,6 @@ router.get('/', usuarioController.obtenerUsuarios);
 
 // Endpoint de login
 router.post('/login', usuarioController.loginUsuario);
+router.post('/', usuarioController.crearUsuario);
 
 module.exports = router;

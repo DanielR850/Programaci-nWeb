@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home-cliente</title>
   <link rel="stylesheet" href="../css/homecliente.css" />
   <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Open+Sans&display=swap" rel="stylesheet">
-
-  
 </head>
 <body>
   <!-- Sección Superior -->
+  <header class="nav-bar">
+    <div class="left-buttons">  
+      <a href="#" class="btn" id="clienteUserBtn">User</a>
+      <a href="home.html" class="btn" id="logoutBtn">Exit</a>
+    </div>
+    <div class="right-buttons">
+      <a href="catalogo-cliente.html" class="btn">Catalog</a>
+      <a href="contactanos-cliente.html" class="btn">Contact us</a>
+    </div>
+  </header>
 
-    <header class="nav-bar">
-        <div class="left-buttons">  
-          <a href="#" class="btn">User</a>
-            <a href="home.html" class="btn">Exit</a>
-        </div>
-        <div class="right-buttons">
-  
-            <a href="catalogo-cliente.html" class="btn">Catalog</a>
-            <a href="contactanos-cliente.html" class="btn">Contact us</a>
-          
-        </div>
-      </header>
- 
+  <!--Texto central-->
+  <main class="hero-section">
+    <div class="welcome-text">
+      <h1>Welcome to</h1>
+      <h1 class="logo">BOOKS OF FEMI</h1>
+    </div>
+  </main>
 
-           <!--Texto central-->
-      <main class="hero-section">
-        <div class="welcome-text">
-          <h1>Welcome to</h1>
-          <h1 class="logo">BOOKS OF FEMI</h1>
-        </div>
-      </main>
-      
-    
+  <script>
+    // Verifica que sea un usuario cliente
+    const user = JSON.parse(localStorage.getItem('usuario'));
+    if (!user || user.role !== 'client') {
+      alert('Acceso denegado. Inicia sesión como cliente.');
+      window.location.href = 'login.html';
+    }
 
-  
+    // Mostrar nombre en botón
+    document.getElementById('clienteUserBtn').textContent = user.username;
+
+    // Cerrar sesión
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('usuario');
+    });
+  </script>
 </body>
 </html>
-
-
