@@ -11,71 +11,43 @@
   <!-- Navbar superior con fondo de imagen -->
   <header class="navbar">
     <div class="nav-buttons">
-      
-       <a href="" class="btn">User</a>
-      <a href="home.html" class="btn">Home</a>
-
-      
+      <a href="#" class="btn" id="adminUserBtn">User</a>
+      <a href="/pages/home.html" class="btn">Home</a>
     </div>
     <h1 class="logo">BOOKS OF FEMI</h1>
   </header>
 
   <!-- Contenedor de la página -->
   <div class="container">
-    <!-- Menú lateral izquierdo -->
+    <!-- Menú lateral izquierdo (con tus estilos intactos) -->
     <nav class="sidebar">
       <div class="dropdown">
-        <button class="dropbtn">Report</button>
+        <button class="dropbtn" data-section="report">Report</button>
       </div>
       <div class="dropdown">
-        <button class="dropbtn">Catalog</button>
+        <button class="dropbtn" data-section="catalog">Catalog</button>
       </div>
       <div class="dropdown">
-        <button class="dropbtn">Ventas</button>
+        <button class="dropbtn" data-section="ventas">Ventas</button>
       </div>
       <div class="dropdown">
         <button class="dropbtn" data-section="users">Users</button>
-      </div>      
+      </div>
       <div class="dropdown">
-        <button class="dropbtn">Contact us</button>
+        <button class="dropbtn" data-section="contact">Contact us</button>
       </div>
     </nav>
 
-    <!-- Zona principal de contenido -->
-    <main class="main-content">
-      <div class="user-table">
-        <div class="user-table-header">
-          <span>Username</span>
-          <span>Email</span>
-          <span>Action</span>
-        </div>
-
-        <div class="user-table-row">
-          <span>Usuario</span>
-          <span>Gmail.com</span>
-          <button class="view-btn">View Purchases</button>
-        </div>
-
-        <div class="user-table-row">
-          <span>Usuario</span>
-          <span>Gmail.com</span>
-          <button class="view-btn">View Purchases</button>
-        </div>
-
-        <div class="user-table-row">
-          <span>Usuario</span>
-          <span>Gmail.com</span>
-          <button class="view-btn">View Purchases</button>
-        </div>
-
-        <div class="search-icon">
-          🔍
-        </div>
+    <!-- Zona principal de contenido dinámico -->
+    <main class="main-content" id="mainContent">
+      <div class="welcome-admin">
+        <h2>📋 Panel de Administración</h2>
+        <p>Selecciona una sección del menú para comenzar a gestionar la tienda.</p>
       </div>
     </main>
   </div>
 
-  <!-- Script para lógica de interacciones -->
+  <!-- Script para funcionalidad -->
   <script src="../js/admin.js"></script>
 </body>
 </html>

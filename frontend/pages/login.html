@@ -11,28 +11,21 @@
   
     <!-- Izquierda: formulario -->
     <div class="login-box">
-      <form class="login-form" id="loginForm">
-        
-        <select class="role-select" required>
-          <option value="" disabled selected>Select your role</option>
-          <option value="admin">Administrator</option>
-          <option value="client">Client</option>
-        </select>
+<form class="login-form" id="loginForm">
 
-        <input type="email" placeholder="📧 Email" required>
-        <input type="text" placeholder="👤 Username" required>
-        
-        <input type="password" placeholder="🔒 *******" required>
+  <select id="role" class="role-select" required>
+    <option value="" disabled selected>Select your role</option>
+    <option value="admin">Administrator</option>
+    <option value="client">Client</option>
+  </select>
+
+  <input type="email" id="email" placeholder="📧 Email" required>
+  <input type="text" id="username" placeholder="👤 Username" required>
+  <input type="password" id="password" placeholder="🔒 *******" required>
+
   <button type="submit" class="sign-in-btn">Sign In</button>
-      
+</form>
 
-        <div class="login-footer">
-        
-          <a href="home.html" class="back-link">← Back</a>
-        
-          <a href="crear-cuenta.html" class="create-btn">Create account</a>
-        </div>
-      </form>
     </div>
 
     <!-- Derecha: recuadro con texto -->
