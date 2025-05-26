@@ -23,6 +23,14 @@ db.connect((err) => {
     return;
   }
   console.log('✅ Conexión exitosa a la base de datos');
+  
+  db.query('SELECT DATABASE() AS base', (err, result) => {
+  if (err) throw err;
+  console.log('📊 Base de datos activa:', result[0].base);
 });
+
+});
+
+
 
 module.exports = db;

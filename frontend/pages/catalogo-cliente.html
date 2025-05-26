@@ -6,73 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Open+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-      <link rel="stylesheet" href="../css/catalogocliente.css" />
-
-    <title>Catalog</title>
+    <link rel="stylesheet" href="../css/catalogocliente.css" />
+    <title>Catalog - Books of Femi</title>
 </head>
 
 <body>
   <!-- Caja del encabezado -->  
-  <div class="header-box">
+  <header class="header-box">
     <h1>BOOKS OF FEMI</h1>
     <div class="nav-buttons">
       <a href="#" class="icon-btn" title="Buscar">
         <span class="material-icons">search</span>
       </a>
-      <a href="carrito.html" class="icon-btn" title="Carrito">
+      <a href="carrito.html" class="icon-btn cart-btn" title="Carrito" id="btnCart">
         <span class="material-icons">shopping_cart</span>
+        <span class="cart-counter" id="cartCounter">0</span>
       </a>
       <a href="compras.html" class="icon-btn" title="Mis Compras">
         <span class="material-icons">library_books</span>
       </a>
       <a href="home-cliente.html" class="btn">Home</a>
-      <a href="#" class="btn">User</a>
+      <a href="#" class="btn" id="userBtn">User</a>
     </div>
-  </div>
+  </header>
 
   <!-- Caja de filtros -->
-  <div class="filters-box">
+  <section class="filters-box">
     <div class="filter">Category ⌃</div>
     <div class="filter">Author ⌃</div>
-  </div>
+  </section>
 
   <!-- Caja del catálogo -->
-  <div class="catalog-box">
-    <div class="book-card">
-      <img src="../assets/diariodegreg2.jpg " alt="Libro" class="book-image"> 
-      <p>📖 Título: El diario de Greg 2</p>
-      <p>✍️ Autor: Jeff Kinney</p>  
-      <p>💲 Precio: $19.99 USD</p>
-      <button class="btn-cart">Add to Cart</button>
-    </div>
+  <main class="catalog-box">
+    <article class="book-card" data-id="32">
+      <img src="../assets/diariodegreg2.jpg" alt="Portada de El diario de Greg 2" class="book-image"> 
+      <div class="book-info">
+        <p>📖 Título: El diario de Greg 2</p>
+        <p>✍️ Autor: Jeff Kinney</p>  
+        <p>💲 Precio: $19.99 USD</p>
+      </div>
+      <button class="btn-cart" aria-label="Añadir al carrito">Add to Cart</button>
+    </article>
 
-    <div class="book-card">
-      <img src="../assets/diariodegreg2.jpg " alt="Libro" class="book-image"> 
-      <p>📖 Título: El diario de Greg 2</p>
-      <p>✍️ Autor: Jeff Kinney</p>  
-      <p>💲 Precio: $19.99 USD</p>
-      <button class="btn-cart">Add to Cart</button>
-    </div>
+    <article class="book-card" data-id="33">
+      <img src="../assets/diariodegreg2.jpg" alt="Portada de El diario de Greg 2" class="book-image"> 
+      <div class="book-info">
+        <p>📖 Título: El diario de Greg 2</p>
+        <p>✍️ Autor: Jeff Kinney</p>  
+        <p>💲 Precio: $19.99 USD</p>
+      </div>
+      <button class="btn-cart" aria-label="Añadir al carrito">Add to Cart</button>
+    </article>
 
+    <article class="book-card" data-id="34">
+      <img src="../assets/diariodegreg2.jpg" alt="Portada de El diario de Greg 2" class="book-image"> 
+      <div class="book-info">
+        <p>📖 Título: El diario de Greg 2</p>
+        <p>✍️ Autor: Jeff Kinney</p>  
+        <p>💲 Precio: $19.99 USD</p>
+      </div>
+      <button class="btn-cart" aria-label="Añadir al carrito">Add to Cart</button>
+    </article>
 
-    <div class="book-card">
-      <img src="../assets/diariodegreg2.jpg " alt="Libro" class="book-image"> 
-      <p>📖 Título: El diario de Greg 2</p>
-      <p>✍️ Autor: Jeff Kinney</p>  
-      <p>💲 Precio: $19.99 USD</p>
-      <button class="btn-cart">Add to Cart</button>
-    </div>
+    <article class="book-card" data-id="35">
+      <img src="../assets/diariodegreg2.jpg" alt="Portada de El diario de Greg 2" class="book-image"> 
+      <div class="book-info">
+        <p>📖 Título: El diario de Greg 2</p>
+        <p>✍️ Autor: Jeff Kinney</p>  
+        <p>💲 Precio: $19.99 USD</p>
+      </div>
+      <button class="btn-cart" aria-label="Añadir al carrito">Add to Cart</button>
+    </article>
+  </main>
 
-    <div class="book-card">
-      <img src="../assets/diariodegreg2.jpg " alt="Libro" class="book-image"> 
-      <p>📖 Título: El diario de Greg 2</p>
-      <p>✍️ Autor: Jeff Kinney</p>  
-      <p>💲 Precio: $19.99 USD</p>
-      <button class="btn-cart">Add to Cart</button>
-    </div>
-
-
-
-  </div>
+  <!-- Script al final del body para mejor performance -->
+  <script src="../js/catalogocliente.js" defer></script>
 </body>
 </html>
