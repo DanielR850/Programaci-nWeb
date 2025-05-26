@@ -27,12 +27,14 @@ const reporteRoutes = require('./routes/reporteRoutes');
 const libroRoutes = require('./routes/libroRoutes');
 const ventaRoutes = require('./routes/ventaRoutes');
 const contactoRoutes = require('./routes/contactoRoutes');
+const pedidoRoutes = require('./routes/pedidoRoutes');
 
 app.use('/api/usuarios', usuarioRoutes);
 app.use('/api/reportes', reporteRoutes);
 app.use('/api/libros', libroRoutes);
 app.use('/api/ventas', ventaRoutes);
 app.use('/api/contacto', contactoRoutes);
+app.use('/api/pedido', pedidoRoutes)
 
 // 🚀 Iniciar servidor
 app.listen(port, () => {
