@@ -129,3 +129,39 @@ font-size: 20px;
 .book-card .btn-cart:hover {
     background-color: #47a5bd;
 }
+/* 🔍 Estilo para el buscador */
+.search-bar {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 250px;
+  background-image: url('https://fonts.gstatic.com/s/i/materialicons/search/v6/24px.svg');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px;
+  padding-left: 40px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-bar:focus {
+  border-color: #1dc8f5;
+}
+
+/* 🏷️ Estilo para select de categorías */
+.filters-box select {
+  padding: 8px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  outline: none;
+  min-width: 200px;
+}
+
+.filters-box select:focus {
+  border-color: #1dc8f5;
+}

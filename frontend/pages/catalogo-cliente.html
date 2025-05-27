@@ -2,23 +2,23 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Open+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
-    <link rel="stylesheet" href="../css/catalogocliente.css" />
-    <title>Catalog - Books of Femi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catalog - Books of Femi</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/catalogocliente.css" />
 </head>
 
 <body>
-  <!-- Caja del encabezado -->  
+  <!-- Encabezado -->
   <header class="header-box">
     <h1>BOOKS OF FEMI</h1>
     <div class="nav-buttons">
-      <a href="#" class="icon-btn" title="Buscar">
-        <span class="material-icons">search</span>
-      </a>
-      <a href="carrito.html" class="icon-btn cart-btn" title="Carrito" id="btnCart">
+      <input type="text" id="buscador" placeholder="🔍 Buscar título o autor" class="search-input" />
+
+      <a href="carrito.html" class="icon-btn cart-btn" title="Carrito">
         <span class="material-icons">shopping_cart</span>
         <span class="cart-counter" id="cartCounter">0</span>
       </a>
@@ -30,56 +30,22 @@
     </div>
   </header>
 
-  <!-- Caja de filtros -->
+  <!-- Filtros -->
   <section class="filters-box">
-    <div class="filter">Category ⌃</div>
-    <div class="filter">Author ⌃</div>
+    <label for="filtroCategoria">Category:</label>
+    <select id="filtroCategoria">
+      <option value="">Todas</option>
+      <!-- JS insertará categorías -->
+    </select>
   </section>
 
-  <!-- Caja del catálogo -->
+  <!-- Catálogo -->
   <main class="catalog-box">
-    <article class="book-card" data-id="32">
-      <img src="../assets/diariodegreg2.jpg" alt="Portada de El diario de Greg 2" class="book-image"> 
-      <div class="book-info">
-        <p>📖 Título: El diario de Greg 2</p>
-        <p>✍️ Autor: Jeff Kinney</p>  
-        <p>💲 Precio: $19.99 USD</p>
-      </div>
-      <button class="btn-cart" aria-label="Añadir al carrito">Add to Cart</button>
-    </article>
-
-    <article class="book-card" data-id="33">
-      <img src="../assets/diariodegreg2.jpg" alt="Portada de El diario de Greg 2" class="book-image"> 
-      <div class="book-info">
-        <p>📖 Título: El diario de Greg 2</p>
-        <p>✍️ Autor: Jeff Kinney</p>  
-        <p>💲 Precio: $19.99 USD</p>
-      </div>
-      <button class="btn-cart" aria-label="Añadir al carrito">Add to Cart</button>
-    </article>
-
-    <article class="book-card" data-id="34">
-      <img src="../assets/diariodegreg2.jpg" alt="Portada de El diario de Greg 2" class="book-image"> 
-      <div class="book-info">
-        <p>📖 Título: El diario de Greg 2</p>
-        <p>✍️ Autor: Jeff Kinney</p>  
-        <p>💲 Precio: $19.99 USD</p>
-      </div>
-      <button class="btn-cart" aria-label="Añadir al carrito">Add to Cart</button>
-    </article>
-
-    <article class="book-card" data-id="35">
-      <img src="../assets/diariodegreg2.jpg" alt="Portada de El diario de Greg 2" class="book-image"> 
-      <div class="book-info">
-        <p>📖 Título: El diario de Greg 2</p>
-        <p>✍️ Autor: Jeff Kinney</p>  
-        <p>💲 Precio: $19.99 USD</p>
-      </div>
-      <button class="btn-cart" aria-label="Añadir al carrito">Add to Cart</button>
-    </article>
+    <!-- JS insertará los libros aquí -->
   </main>
 
-  <!-- Script al final del body para mejor performance -->
+  <!-- Script principal -->
   <script src="../js/catalogocliente.js" defer></script>
 </body>
+
 </html>

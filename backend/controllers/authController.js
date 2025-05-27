@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const db = require('../models/db'); // o el método que uses para consultar tu BD
+const { dbPromise } = require('../models/db'); // 🔄 Usa dbPromise para await
 const bcrypt = require('bcrypt');  // si usas hash para contraseñas
 
 async function login(req, res) {
@@ -7,7 +7,8 @@ async function login(req, res) {
 
   try {
     // Busca usuario en BD por email
-    const [rows] = await db.query('SELECT * FROM usuarios WHERE email = ?', [email]);
+    const [rows] = await dbPromise.query('SELECT * FROM usuarios WHERE email = ?', [email]);
+
     if (rows.length === 0) {
       return res.status(401).json({ message: 'Usuario no encontrado' });
     }
@@ -22,13 +23,19 @@ async function login(req, res) {
 
     // Crear token JWT con el id del usuario
     const token = jwt.sign(
-      { id: user.idUsuario },  // o el campo que uses para el id usuario
-      process.env.JWT_SECRET,
+      { id: user.idUsuario },
+      process.env.JWT_SECRET || 'secreto',
       { expiresIn: '1h' }
     );
 
     // Responder con token
-    res.json({ token });
+    res.json({ 
+      success: true,
+      token,
+      idUsuario: user.idUsuario,
+      username: user.username, // si lo necesitas
+      role: user.rol // si usas roles
+    });
 
   } catch (error) {
     console.error('Error en login:', error);

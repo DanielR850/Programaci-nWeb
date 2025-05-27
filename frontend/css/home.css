@@ -73,9 +73,8 @@
   
   
   /* Sección central del home */
-  .hero-section {
 .hero-section {
- background-image: url('../assets/2019-01-15-10-41-32.jpg');
+  background-image: url('/assets/2019-01-15-10-41-32.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -85,10 +84,10 @@
   text-align: left;
   height: calc(100vh - 52px); /* Ajustar altura por el header reducido */
   padding-left: 10%;
-  border-top: 2px solid black; /* Línea blanca superior */
-  box-sizing: border-box; /* Incluir el borde en la altura total */
+  border-top: 2px solid black;
+  box-sizing: border-box;
 }
-    }
+
   
     /*Texto principal de la página*/
   .welcome-text h1 {

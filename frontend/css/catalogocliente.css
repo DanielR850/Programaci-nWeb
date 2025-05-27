@@ -1,27 +1,27 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
 .header-box {
-    background-image: url('../assets/2019-01-15-10-41-32.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 0 20px; /* Reducido padding vertical */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 2px solid black; /* Línea negra inferior */
-    margin: 0; /* Asegura que no hay margen externo */
+  background-image: url('../assets/2019-01-15-10-41-32.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  margin: 0;
 }
 
 h1 {
-    margin-left: 50px;
-    font-family: 'Oleo Script', cursive;
-    font-size: 48px;
-    color: white;
+  margin-left: 50px;
+  font-family: 'Oleo Script', cursive;
+  font-size: 48px;
+  color: white;
 }
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
 
 .nav-buttons {
   display: flex;
@@ -29,7 +29,6 @@ body {
   gap: 12px;
   margin-right: 40px;
 }
-
 
 .icon-btn {
   display: inline-flex;
@@ -44,14 +43,14 @@ body {
   cursor: pointer;
   transition: background-color .2s;
 }
+
 .icon-btn:hover {
   background-color: rgba(0,0,0,0.8);
 }
-/* tamaño de la fuente del icono */
+
 .icon-btn .material-icons {
   font-size: 24px;
 }
-
 
 .nav-buttons .btn {
   padding: 10px 60px;
@@ -64,35 +63,74 @@ body {
   cursor: pointer;
   transition: background-color .2s;
 }
+
 .nav-buttons .btn:hover {
   background-color: #777;
   border-color: #666666;
 }
 
-/* (Opcional) Si quieres que “User” destaque más, dale una clase extra */
 .user-btn {
   background-color: #fff;
   color: #000;
 }
+
 .user-btn:hover {
   background-color: #eee;
 }
 
+/* Filtros */
 .filters-box {
- display: flex;
- gap: 100px;
- align-items: center;
- margin: 10px 0;
- padding: 10px 100px;
- font-family: 'Arial', sans-serif;
-font-size: 20px;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px 100px;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
 }
 
 .filter {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
+/* Estilo para select y buscador */
+.filters-box select {
+  padding: 8px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  outline: none;
+  min-width: 200px;
+}
+
+.filters-box select:focus {
+  border-color: #1dc8f5;
+}
+
+.search-bar {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 250px;
+  background-image: url('https://fonts.gstatic.com/s/i/materialicons/search/v6/24px.svg');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px;
+  padding-left: 40px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-bar:focus {
+  border-color: #1dc8f5;
+}
+
+/* Catálogo */
 .catalog-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -101,7 +139,7 @@ font-size: 20px;
 }
 
 .book-card {
-  width: 200px;             
+  width: 200px;
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -110,23 +148,61 @@ font-size: 20px;
 }
 
 .book-image {
-  width: 100%;              
-  height: auto;              
-  object-fit: cover;         
+  width: 100%;
+  height: auto;
+  object-fit: cover;
   border-radius: 4px;
   margin-bottom: 10px;
 }
 
 .btn-cart {
- padding: 10px 20px;
- background-color: #1dc8f5;
- font-family: 'Arial', sans-serif;
- color: white;
- border-radius: 5px;
- border-color: black;
- text-decoration: none;
+  padding: 10px 20px;
+  background-color: #1dc8f5;
+  font-family: 'Arial', sans-serif;
+  color: white;
+  border-radius: 5px;
+  border-color: black;
+  text-decoration: none;
 }
 
 .book-card .btn-cart:hover {
-    background-color: #47a5bd;
+  background-color: #47a5bd;
+}
+/* 🔍 Estilo para input de búsqueda (ej. autor o título) */
+.filters-box input[type="text"],
+.filters-box input[type="search"] {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width: 250px;
+  background-image: url('https://fonts.gstatic.com/s/i/materialicons/search/v6/24px.svg');
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 20px;
+  padding-left: 40px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.filters-box input[type="text"]:focus,
+.filters-box input[type="search"]:focus {
+  border-color: #1dc8f5;
+}
+
+/* 🏷️ Estilo para <select> (categorías, autores, etc.) */
+.filters-box select {
+  padding: 8px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  outline: none;
+  min-width: 200px;
+}
+
+.filters-box select:focus {
+  border-color: #1dc8f5;
 }

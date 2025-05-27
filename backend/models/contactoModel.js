@@ -18,3 +18,13 @@ exports.updateContacto = (descripcion) => {
     });
   });
 };
+const obtenerTextoContacto = (callback) => {
+  const sql = 'SELECT Descripcion FROM Contacto WHERE idContacto = 1'; // O el que decidas
+  db.query(sql, (err, results) => {
+    if (err) return callback(err);
+    if (results.length === 0) return callback(null, null);
+    callback(null, results[0].Descripcion);
+  });
+};
+
+module.exports = { obtenerTextoContacto };

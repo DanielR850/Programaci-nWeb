@@ -9,6 +9,8 @@ router.post('/', libroController.createLibro);
 router.put('/:id', libroController.updateLibro);
 router.delete('/:id', libroController.deleteLibro);
 router.get('/:id', libroController.getLibroById);
+router.post('/imagen', libroController.subirImagen);
+router.post('/pdf', libroController.subirPDF);
 
 // Nueva ruta para subir imagen
 router.post('/imagen', upload.single('imagen'), (req, res) => {

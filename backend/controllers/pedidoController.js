@@ -1,11 +1,26 @@
-let carrito = [];
+const { dbPromise: db } = require('../models/db');
 
-exports.agregarProducto = (req, res) => {
-  const { productoId, cantidad } = req.body;
-  carrito.push({ productoId, cantidad });
-  res.status(201).json({ mensaje: "Producto agregado al carrito", carrito });
-};
+exports.obtenerPedidosUsuario = async (req, res) => {
+  const idUsuario = req.user.id;
 
-exports.obtenerCarrito = (req, res) => {
-  res.json(carrito);
+  try {
+    const [libros] = await db.query(`
+      SELECT 
+        l.idLibro,
+        l.Título,
+        l.Autor,
+        l.Precio,
+        l.RutaDeLaImagen,
+        l.RutaDelLibroDescargable
+      FROM Pedido_Libro pl
+      JOIN Libros l ON pl.idLibro = l.idLibro
+      JOIN Pedido p ON pl.idPedido = p.idPedido
+      WHERE p.idUsuario = ?
+    `, [idUsuario]);
+
+    res.json(libros);
+  } catch (error) {
+    console.error('❌ Error al obtener pedidos:', error);
+    res.status(500).json({ error: 'Error al obtener compras del usuario' });
+  }
 };

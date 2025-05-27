@@ -1,28 +1,16 @@
-const db = require('./db');
+const { dbPromise } = require('./db'); // Usa la conexión con promesas
 
-exports.getCategorias = () => {
-  return new Promise((resolve, reject) => {
-    db.query('SELECT * FROM Categoria', (err, results) => {
-      if (err) reject(err);
-      else resolve(results);
-    });
-  });
+exports.getCategorias = async () => {
+  const [rows] = await dbPromise.query('SELECT * FROM Categoria');
+  return rows;
 };
 
-exports.createCategoria = (data) => {
-  return new Promise((resolve, reject) => {
-    db.query('INSERT INTO Categoria SET ?', data, (err, result) => {
-      if (err) reject(err);
-      else resolve(result);
-    });
-  });
+exports.createCategoria = async (data) => {
+  const [result] = await dbPromise.query('INSERT INTO Categoria SET ?', [data]);
+  return result;
 };
 
-exports.deleteCategoria = (id) => {
-  return new Promise((resolve, reject) => {
-    db.query('DELETE FROM Categoria WHERE idCategoria = ?', [id], (err, result) => {
-      if (err) reject(err);
-      else resolve(result);
-    });
-  });
+exports.deleteCategoria = async (id) => {
+  const [result] = await dbPromise.query('DELETE FROM Categoria WHERE idCategoria = ?', [id]);
+  return result;
 };

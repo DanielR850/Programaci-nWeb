@@ -1,30 +1,17 @@
-const db = require('./db');
+const { dbPromise } = require('./db'); // Asegúrate que venga desde db.js
 
-exports.getAutores = () => {
-  return new Promise((resolve, reject) => {
-    db.query('SELECT * FROM Autor', (err, results) => {
-      if (err) reject(err);
-      else resolve(results);
-    });
-  });
+exports.getAutores = async () => {
+  const [rows] = await dbPromise.query('SELECT * FROM Autor');
+  return rows;
 };
 
-exports.createAutor = (autor) => {
-  return new Promise((resolve, reject) => {
-    const sql = 'INSERT INTO Autor (Autor) VALUES (?)';
-    db.query(sql, [autor], (err, result) => {
-      if (err) reject(err);
-      else resolve(result);
-    });
-  });
+exports.createAutor = async (autor) => {
+  const [result] = await dbPromise.query('INSERT INTO Autor (Autor) VALUES (?)', [autor]);
+  return result;
 };
 
-exports.deleteAutor = (autor) => {
-  return new Promise((resolve, reject) => {
-    const sql = 'DELETE FROM Autor WHERE Autor = ?';
-    db.query(sql, [autor], (err, result) => {
-      if (err) reject(err);
-      else resolve(result);
-    });
-  });
+exports.deleteAutor = async (autor) => {
+  const [result] = await dbPromise.query('DELETE FROM Autor WHERE Autor = ?', [autor]);
+  return result;
 };
+

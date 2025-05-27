@@ -1,100 +1,171 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Función mejorada para actualizar el contador del carrito
-    const updateCartCounter = async (userId) => {
-        try {
-            const usuario = JSON.parse(localStorage.getItem('usuario'));
-            if (!usuario?.token) return;
+  const cartCounter = document.getElementById('cartCounter');
 
-            const response = await fetch(`/api/carrito/count?userId=${userId}`, {
-                headers: {
-                    'Authorization': `Bearer ${usuario.token}`,
-                    'Content-Type': 'application/json'
-                },
-                credentials: 'include' // Para manejar cookies si es necesario
-            });
+  const usuario = JSON.parse(localStorage.getItem('usuario'));
+  const userId = usuario?.idUsuario;
+  const token = usuario?.token;
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+  if (!userId || !token) {
+    alert("Debes iniciar sesión.");
+    window.location.href = "login.html";
+    return;
+  }
 
-            const data = await response.json();
-            
-            if (data.success && document.getElementById('cartCounter')) {
-                document.getElementById('cartCounter').textContent = data.count;
-            }
-        } catch (error) {
-            console.error("Error actualizando contador del carrito:", error);
-        }
-    };
-
-    // Función mejorada para añadir al carrito
-    const addToCart = async (idLibro) => {
-        try {
-            const usuario = JSON.parse(localStorage.getItem('usuario'));
-            
-            // Verificar si el usuario está logueado
-            if (!usuario?.idUsuario) {
-                alert("Debes iniciar sesión para agregar al carrito.");
-                window.location.href = "login.html";
-                return { success: false };
-            }
-
-            // Enviar datos al servidor
-            const response = await fetch('/api/carrito/agregar', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${usuario.token}`
-                },
-                body: JSON.stringify({
-                    idUsuario: usuario.idUsuario,
-                    idLibro: idLibro
-                })
-            });
-
-            const data = await response.json();
-            
-            if (!response.ok) {
-                throw new Error(data.message || "Error en la respuesta del servidor");
-            }
-
-            return data;
-            
-        } catch (error) {
-            console.error("Error al añadir al carrito:", error);
-            throw error;
-        }
-    };
-
-    // Configurar eventos para los botones "Add to Cart"
-    document.querySelectorAll('.btn-cart').forEach(btn => {
-        btn.addEventListener('click', async (e) => {
-            try {
-                const card = e.target.closest('.book-card');
-                const idLibro = card.dataset.id;
-                
-                const result = await addToCart(idLibro);
-                
-                if (result.success) {
-                    alert("✅ Libro añadido al carrito");
-                    // Actualizar contador
-                    const usuario = JSON.parse(localStorage.getItem('usuario'));
-                    if (usuario?.idUsuario) {
-                        await updateCartCounter(usuario.idUsuario);
-                    }
-                } else {
-                    alert(`❌ Error: ${result.message || "No se pudo agregar al carrito"}`);
-                }
-            } catch (error) {
-                console.error("Error:", error);
-                alert("Error al conectar con el servidor. Por favor, intenta nuevamente.");
-            }
-        });
+const cargarCategorias = async () => {
+  try {
+    const res = await fetch('http://localhost:3000/api/categorias', {
+      headers: { 'Authorization': `Bearer ${token}` }
     });
+    const categorias = await res.json();
 
-    // Inicializar contador del carrito al cargar la página
-    const usuario = JSON.parse(localStorage.getItem('usuario'));
-    if (usuario?.idUsuario) {
-        updateCartCounter(usuario.idUsuario);
+    const select = document.getElementById('filtroCategoria');
+    select.innerHTML = '<option value="">Todas</option>'; // Limpia y agrega opción "Todas"
+
+    categorias.forEach(cat => {
+      const option = document.createElement('option');
+      option.value = cat.idCategoria; // ✅ Usa ID numérico
+      option.textContent = cat.Category; // ✅ Muestra el nombre visible
+      select.appendChild(option);
+    });
+  } catch (error) {
+    console.error('❌ Error cargando categorías:', error);
+  }
+};
+
+cargarCategorias();
+
+  const cargarLibros = async () => {
+    try {
+      const res = await fetch('http://localhost:3000/api/libros', {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      });
+
+      const libros = await res.json();
+      renderizarLibros(libros);
+    } catch (error) {
+      console.error('❌ Error cargando libros:', error);
     }
+  };
+
+  const renderizarLibros = (libros) => {
+    const catalogBox = document.querySelector('.catalog-box');
+    catalogBox.innerHTML = '';
+
+    libros.forEach(libro => {
+      const card = document.createElement('article');
+      card.className = 'book-card';
+      card.dataset.id = libro.idLibro;
+
+      card.innerHTML = `
+        <img src="${libro.RutaDeLaImagen}" alt="${libro.Título}" class="book-image">
+        <div class="book-info">
+          <p>📖 Título: ${libro.Título}</p>
+          <p>✍️ Autor: ${libro.Autor}</p>
+          <p>💲 Precio: $${libro.Precio} USD</p>
+        </div>
+        <button class="btn-cart">Add to Cart</button>
+      `;
+
+      card.querySelector('.btn-cart').addEventListener('click', async () => {
+        await agregarAlCarrito(libro.idLibro);
+      });
+
+      catalogBox.appendChild(card);
+    });
+  };
+
+  const agregarAlCarrito = async (idLibro) => {
+    try {
+      const response = await fetch('http://localhost:3000/api/carrito', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify({ idUsuario: userId, idLibro })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.success) {
+        alert(data.message || '❌ No se pudo agregar al carrito.');
+        return;
+      }
+
+      alert('✅ Libro añadido al carrito');
+      actualizarContadorCarrito();
+
+    } catch (error) {
+      console.error('❌ Error al agregar al carrito:', error);
+    }
+  };
+
+  const actualizarContadorCarrito = async () => {
+    try {
+      const res = await fetch(`http://localhost:3000/api/carrito/usuario/${userId}`, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+
+      const datos = await res.json();
+      cartCounter.textContent = Array.isArray(datos) ? datos.length : 0;
+
+    } catch (error) {
+      console.error('❌ Error al actualizar contador:', error);
+      cartCounter.textContent = '0';
+    }
+  };
+const selectCategoria = document.getElementById('filtroCategoria');
+
+if (selectCategoria) {
+  selectCategoria.addEventListener('change', async () => {
+    const categoria = selectCategoria.value;
+
+    try {
+      const url = categoria 
+        ? `http://localhost:3000/api/libros?categoria=${categoria}`
+        : 'http://localhost:3000/api/libros';
+
+      const res = await fetch(url, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+
+      const libros = await res.json();
+      renderizarLibros(libros);
+
+    } catch (error) {
+      console.error('❌ Error filtrando por categoría:', error);
+    }
+  });
+}
+
+const inputBuscador = document.getElementById('buscador');
+
+if (inputBuscador) {
+  inputBuscador.addEventListener('input', async () => {
+    const texto = inputBuscador.value.trim();
+
+    try {
+      const url = texto
+        ? `http://localhost:3000/api/libros?q=${encodeURIComponent(texto)}`
+        : 'http://localhost:3000/api/libros';
+
+      const res = await fetch(url, {
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+
+      const libros = await res.json();
+      renderizarLibros(libros);
+
+    } catch (error) {
+      console.error('❌ Error en búsqueda:', error);
+    }
+  });
+}
+
+
+  cargarCategorias(); // ✅ Llamar esta función 
+  cargarLibros();
+  actualizarContadorCarrito();
 });
