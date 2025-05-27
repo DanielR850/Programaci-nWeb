@@ -25,4 +25,12 @@ db.connect((err) => {
   console.log('✅ Conexión exitosa a la base de datos');
 });
 
+db.on('error', (err) => {
+  console.error('❌ Error de conexión:', err.message);
+  if (err.code === 'PROTOCOL_CONNECTION_LOST') {
+    console.log('Reconectando a la base de datos...');
+    db.connect(); // Reconexión automática
+  }
+});
+
 module.exports = db;

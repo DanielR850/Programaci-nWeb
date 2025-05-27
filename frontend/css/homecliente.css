@@ -3,13 +3,14 @@
 
 
 .nav-bar {
-
-  background-size: cover;
+ background-size: cover;
   background-position: center;
-  padding: 30px 20px;
+  padding: 15px 20px; /* Reducir padding vertical */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0;
+  border-bottom: 2px solid black; /* Línea blanca inferior */
 }
 
 /*Izquierdo*/
@@ -65,22 +66,23 @@
 
 /* Sección central del home */
 .hero-section {
-
-  background-image: url('../assets/2019-01-15-10-41-32.jpg');
+ background-image: url('../assets/2019-01-15-10-41-32.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   display: flex;
   align-items: center;
-  /* Centra verticalmente */
   justify-content: flex-start;
-  /* Alinea a la izquierda */
-
   text-align: left;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 52px); /* Ajustar altura por el header reducido */
   padding-left: 10%;
-  /* Añade espacio desde la izquierda */
+  border-top: 2px solid black; /* Línea blanca superior */
+  box-sizing: border-box; /* Incluir el borde en la altura total */
+}
+
+body {
+  margin: 0;
+  padding: 0;
 }
 
 /*Texto principal de la página*/

@@ -3,11 +3,12 @@
     background-image: url('../assets/2019-01-15-10-41-32.jpg');
     background-size: cover;
     background-position: center;
-    padding: 1px 20px;
+    padding: 0 20px; /* Reducido padding vertical */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    ;
+    border-bottom: 2px solid black; /* Línea negra inferior */
+    margin: 0; /* Asegura que no hay margen externo */
 }
 
 h1 {
@@ -16,6 +17,12 @@ h1 {
     font-size: 48px;
     color: white;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
 
 .nav-buttons {
   display: flex;

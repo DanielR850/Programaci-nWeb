@@ -8,9 +8,8 @@
 </head>
 <body>
   <div class="login-container">
-  
-    <!-- Izquierda: formulario -->
-    <div class="login-box">
+    <div class="login-card">
+<div class="form-side">
 <form class="login-form" id="loginForm">
 
   <select id="role" class="role-select" required>
@@ -24,17 +23,22 @@
   <input type="password" id="password" placeholder="🔒 *******" required>
 
   <button type="submit" class="sign-in-btn">Sign In</button>
+  <div class="login-footer">
+          <a href="../pages/home.html" class="back-link">← Back</a>
+          <a href="../pages/crear-cuenta.html" class="create-btn">Create account</a>
+        </div>
 </form>
 
     </div>
 
     <!-- Derecha: recuadro con texto -->
-    <div class="login-info-box">
+    <div class="info-side">
       <div class="info-content">
       <h1 class="logologin">BOOKS OF FEMI</h1>
     </div>
     </div>
 
+    </div>
   </div>
 
   <script src="../js/noregistrado.js"></script>

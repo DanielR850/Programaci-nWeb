@@ -1,135 +1,106 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&family=Open+Sans&display=swap');
 
-
+/* Reset y body centrado */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
 body {
-    background-image: url('../assets/2019-01-15-10-41-32.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 30px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-
- 
-  .login-container {
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  .login-box {
-    background: #fff;
-    padding: 33px;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 350px;
-  }
-  
-  .login-form {
-    color: black;
-    width: 60%; 
-    display: flex;
-    flex-direction: column; 
-    margin: 0 auto;
-  }
-  
- 
-  
-  .login-form input {
-    background-color:  rgb(216, 216, 216); 
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #a7a7a7;
-    border-radius: 8px;
-    font-size: 14px;
-  }
-  
-
-  
-  .sign-in-btn:hover {
-    background: #0056b3;
-  }
-  
-  /*--Contenedor de los botones de acción--*/
-  .login-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px; 
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-
-  }
-  
-  /*--Enlace para regresar a la página principal--*/
-  .back-link {
-    color: #333;
-    text-decoration: none;
-    display: inline-block; 
-  margin-top: 15px; 
-  align-self: flex-start;
-  }
-  
-  .back-link:hover {
-    text-decoration: underline;
-  }
-  
-  /*--Botón/enlace--*/
-  .create-btn {
-    padding: 10px;
-    background-color: rgb(216, 216, 216);
-    color: rgb(0, 0, 0);
-    border: none; /* corregido para que se vea bien */
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    width: 100%; /* para que tenga el mismo ancho que inputs */
-    box-sizing: border-box;
-    text-align: center; /* por si es enlace */
-    display: inline-block; /* para que respete ancho y padding */
-    text-decoration: none; /* para quitar subrayado si es <a> */
-}
-
-.create-btn:hover {
-    background: #0056b3;
-    color: rgb(0, 0, 0); /* para que el texto contraste al hacer hover */
-    text-decoration: none;
-}
-
-  
- .info-content {
+  background: url('../assets/2019-01-15-10-41-32.jpg') center/cover no-repeat;
+  height: 100vh;
   display: flex;
-  flex-direction: column; 
-  align-items: center;
   justify-content: center;
-  text-align: center;
-  background-color: rgb(216, 216, 216);
-  height: 323px;
-  border-radius: 6px;
-  padding: 30px;
-  width: 380px; 
-  max-width: 400%;
+  align-items: center;
+}
+
+/* Contenedor general */
+.login-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 20px;
+}
+
+/* La tarjeta única con dos paneles */
+.login-card {
+  display: flex;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+/* Panel izquierdo: formulario */
+.form-side {
+  flex: 1;
+  background: #fff;
+  padding: 40px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login-form input {
+  background-color: rgb(216,216,216);
+  padding: 10px;
+  border: 1px solid #a7a7a7;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Botón Create account */
+.create-btn {
+  padding: 10px;
+  background-color: rgb(216,216,216);
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
   box-sizing: border-box;
 }
 
+.create-btn:hover {
+  background-color: #0056b3;
+  color: #fff;
+}
 
-  h1.logologin  {
-    font-family: 'Oleo Script', cursive;
-    font-size: 50px;
-    color: white;
-  }
-  
-  
+/* Pie de formulario (solo Back) */
+.login-footer {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.back-link {
+  color: #333;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Panel derecho: info/logo */
+.info-side {
+  flex: 1;
+  background-color: rgb(216,216,216);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+.info-content {
+  text-align: center;
+}
+
+h1.logologin {
+  font-family: 'Oleo Script', cursive;
+  font-size: 50px;
+  color: white;
+}

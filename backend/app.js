@@ -34,7 +34,7 @@ app.use('/api/reportes', reporteRoutes);
 app.use('/api/libros', libroRoutes);
 app.use('/api/ventas', ventaRoutes);
 app.use('/api/contacto', contactoRoutes);
-app.use('/api/pedido', pedidoRoutes)
+app.use('/api/pedido', pedidoRoutes);
 
 // 🚀 Iniciar servidor
 app.listen(port, () => {

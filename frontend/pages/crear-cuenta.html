@@ -8,43 +8,36 @@
 </head>
 <body>
   <div class="login-container">
-  
-    <!-- Izquierda: formulario -->
-    <div class="login-box">
-      <form class="login-form" id="createAccountForm">
 
-      <form class="login-form">
-         
-        <input type="text" placeholder="👤 Username" required>
-        <input type="email" placeholder="📧 Email" required>
-        
-        <input type="password" placeholder="🔒 *******" required>
- 
-  
-        <div class="login-footer">
-          
-        <button type="submit" class="create-btn">Create account</button>
+    <!-- Única tarjeta con ambas mitades -->
+    <div class="login-card">
 
+      <!-- Izquierda: formulario de registro -->
+      <div class="form-side">
+        <form class="login-form" id="createAccountForm">
+          <input type="text" placeholder="👤 Username" required>
+          <input type="email" placeholder="📧 Email" required>
+          <input type="password" placeholder="🔒 *******" required>
 
+          <button type="submit" class="create-btn">Create account</button>
 
-          <a href="home.html" class="back-link">← Back</a>
-        
+          <div class="login-footer">
+            <a href="login.html" class="back-link">← Back</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Derecha: info / logo -->
+      <div class="info-side">
+        <div class="info-content">
+          <h1 class="logologin">BOOKS OF <br> FEMI</h1>
         </div>
-      </form>
-    </div>
+      </div>
 
-    <!-- Derecha: recuadro con texto -->
-    <div class="login-info-box">
-      <div class="info-content">
-      <h1 class="logologin">BOOKS OF <br> FEMI</h1>
-    </div>
-    </div>
+    </div><!-- /.login-card -->
 
-  </div>
+  </div><!-- /.login-container -->
 
   <script src="../js/noregistrado.js"></script>
 </body>
 </html>
-
-
-

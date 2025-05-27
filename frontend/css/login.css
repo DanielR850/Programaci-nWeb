@@ -36,16 +36,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 100vh;
+    
   }
   
-  .login-box {
-    background: #fff;
+.login-card {
+      background: #fff;
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 350px;
-  }
+    display: flex;
+    overflow: hidden;         /* para que los bordes redondeados afecten a los hijos */
+    max-width: 800px;         /* ancho total; ajusta al gusto */
+    width: 100%;
+}
+
+  .form-side {
+  background: #fff;
+  padding: 40px;
+  flex: 1;                  /* ocupa la mitad del ancho */
+}
+
+.info-side {
+  background: rgb(216,216,216);
+  flex: 1;                  /* ocupa la otra mitad */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.info-content {
+  text-align: center;
+  padding: 10px;
+}
 
   /*--Formulario--*/
   .login-form {
@@ -126,7 +149,7 @@
     background-color:rgb(216, 216, 216); 
     height: 407px;
     border-radius: 6px;
-    padding: 30px;
+    padding: 31px;
     max-width: 90%;
   }
 
