@@ -23,8 +23,13 @@ db.connect((err) => {
     return;
   }
   console.log('✅ Conexión exitosa a la base de datos');
+  
+  db.query('SELECT DATABASE() AS base', (err, result) => {
+  if (err) throw err;
+  console.log('📊 Base de datos activa:', result[0].base);
 });
 
+<<<<<<< HEAD
 db.on('error', (err) => {
   console.error('❌ Error de conexión:', err.message);
   if (err.code === 'PROTOCOL_CONNECTION_LOST') {
@@ -33,4 +38,10 @@ db.on('error', (err) => {
   }
 });
 
+=======
+});
+
+
+
+>>>>>>> 9e96a18dd8149b7c144fd60684cbb653ea187dd4
 module.exports = db;

@@ -37,3 +37,20 @@ exports.obtenerUsuarios = (req, res) => {
     res.json(results);
   });
 };
+
+exports.crearUsuario = async (req, res) => {
+  try {
+    const { Username, Email, Contraseña, idTipoUsuario } = req.body;
+
+    const sql = `INSERT INTO Usuario (Username, Email, Contraseña, idTipoUsuario) VALUES (?, ?, ?, ?)`;
+    db.query(sql, [Username, Email, Contraseña, idTipoUsuario], (err, result) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ success: false });
+      }
+      res.json({ success: true });
+    });
+  } catch (err) {
+    res.status(500).json({ success: false });
+  }
+};

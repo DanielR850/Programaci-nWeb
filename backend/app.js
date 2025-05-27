@@ -27,14 +27,20 @@ const reporteRoutes = require('./routes/reporteRoutes');
 const libroRoutes = require('./routes/libroRoutes');
 const ventaRoutes = require('./routes/ventaRoutes');
 const contactoRoutes = require('./routes/contactoRoutes');
-const pedidoRoutes = require('./routes/pedidoRoutes');
+const categoriaRoutes = require('./routes/categoriaRoutes');
+const autorRoutes = require('./routes/autorRoutes');
 
 app.use('/api/usuarios', usuarioRoutes);
 app.use('/api/reportes', reporteRoutes);
 app.use('/api/libros', libroRoutes);
 app.use('/api/ventas', ventaRoutes);
 app.use('/api/contacto', contactoRoutes);
+<<<<<<< HEAD
 app.use('/api/pedido', pedidoRoutes);
+=======
+app.use('/api/categorias', categoriaRoutes);
+app.use('/api/autores', autorRoutes);
+>>>>>>> 9e96a18dd8149b7c144fd60684cbb653ea187dd4
 
 // 🚀 Iniciar servidor
 app.listen(port, () => {
